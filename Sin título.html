@@ -1,0 +1,279 @@
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Tradicional - Mole Doña Gloria</title>
+    <style>
+                :root {
+            --color-principal: #4A1525; /* Tono mole/poblano oscuro */
+            --color-secundario: #D4AC0D; /* Tono dorado/maíz */
+            --color-fondo: #FAF3E0; /* Crema suave para el fondo */
+            --color-texto: #332211; /* Marrón muy oscuro para lectura */
+            --blanco: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        header {
+            background: var(--color-principal);
+            color: var(--blanco);
+            padding: 2.5rem 0; /* Un poco más de padding para el logo */
+            text-align: center;
+            border-bottom: 5px solid var(--color-secundario);
+            /* Asegurar que el logo y el texto se centren bien */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        
+        header img.logo {
+            max-width: 150px; 
+            height: auto;
+            margin-bottom: 1rem; 
+            border-radius: 50%; 
+            border: 3px solid var(--color-secundario); 
+            padding: 5px; 
+            background: var(--blanco);         }
+
+        nav {
+            background: #330E19; 
+            text-align: center;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--blanco);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-secundario);
+        }
+
+        .container {
+            padding: 40px 20px;
+            margin: 30px auto;
+            max-width: 900px;
+            background: var(--blanco);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--color-principal);
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        
+        .grid-ubicaciones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #FDFBF7;
+            padding: 20px;
+            border-left: 4px solid var(--color-principal);
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--color-principal);
+        }
+
+        footer {
+            background: var(--color-principal);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 50px;
+            border-top: 4px solid var(--color-secundario);
+        }
+	/ Catálogo de Productos /
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .producto-card {
+            background: #FDFBF7;
+            border: 1px solid #EADCC9;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(74, 21, 37, 0.1);
+        }
+
+        .producto-icono {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .precio {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color-principal);
+            margin: 10px 0;
+        }
+
+        .btn-comprar {
+            background-color: var(--color-principal);
+            color: var(--blanco);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-comprar:hover {
+            background-color: #330E19;
+            color: var(--color-secundario);
+/* Estilo para que las fotos de los productos queden perfectas */
+        .producto-foto {
+            width: 100%;          /* Ocupa todo el ancho de la tarjeta */
+            height: 200px;        /* Altura fija para que todas las tarjetas se vean parejas */
+            object-fit: cover;    /* Recorta la imagen de forma inteligente para que no se estire feo */
+            border-radius: 6px;   /* Esquinas suavemente redondeadas */
+            margin-bottom: 15px;  /* Espacio con el título de abajo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="MOLE.png" alt="Logo de Mole Doña Gloria" class="logo">
+        <h1>Mole Tradicional "Doña Gloria"</h1>
+    </header>
+
+    <nav>
+        <a href="#vision">Visión</a>
+        <a href="#mision">Misión</a>
+        <a href="#politica-de-calidad">Política de Calidad</a>
+	<a href="#productos">Productos</a>
+        <a href="#sucursales">Sucursales</a>
+    </nav>
+
+    <main>
+        <section class="container" id="vision">
+            <h2>Visión</h2>
+            <p>Ser reconocidos como uno de los mayores proveedores, líderes en la producción de mole 100% casero y auténtico tradicional, ofreciendo a nuestros clientes la más alta calidad en sabor, tradición y servicio, manteniendo la forma tradicional en nuestro municipio al cocinar, siendo una parte esencial de sus experiencias culinarias.</p>
+        </section>
+
+        <section class="container" id="mision">
+            <h2>Misión</h2>
+            <p>Ofrecer a nuestros clientes la auténtica experiencia del sabor tradicional de nuestro municipio, elaborando mole 100% casero con ingredientes de la más alta calidad y siguiendo nuestra receta única que ha sido transmitida de generación en generación. Nos comprometemos a brindar un producto que no solo deleite el paladar, sino que también celebre y preserve nuestra rica herencia cultural.</p>
+        </section> <!-- Corrección: Etiqueta de cierre agregada -->
+
+        <section class="container" id="politica-de-calidad">
+            <h2>Política de Calidad</h2>
+            <p>En “Mole Doña Gloria”, nos comprometemos a elaborar y comercializar mole 100% casero y auténtico tradicional, garantizando la máxima calidad en sabor, tradición y servicio en cada uno de nuestros productos. Centramos nuestros esfuerzos en preservar la herencia cultural y las recetas únicas de nuestro municipio transmitidas de generación en generación, asegurando la selección de ingredientes de la más alta calidad y la mejora continua de nuestros procesos culinarios y de atención, con el fin de superar las expectativas de nuestros clientes y formar parte esencial de sus experiencias gastronómicas.</p>
+            
+            <p>Nuestra empresa se rige bajo los siguientes compromisos:</p>
+            <p><strong>Autenticidad y preservación cultural:</strong> Nos comprometemos a mantener estrictamente la forma tradicional de cocinar de nuestro municipio, respetando la receta única heredada de generación en generación para celebrar y preservar nuestra herencia cultural.</p>
+            <p><strong>Excelencia en materias primas:</strong> Seleccionamos rigurosamente a nuestros proveedores para asegurar que cada ingrediente utilizado en la producción de nuestro mole cumpla con los estándares de frescura y la más alta calidad.</p>
+            <p><strong>Satisfacción del cliente:</strong> Buscamos deleitar el paladar de quienes nos eligen, ofreciendo no solo un producto excepcional, sino también un servicio cálido y eficiente que enriquezca su experiencia culinaria.</p>
+            <p><strong>Liderazgo y mejora continua:</strong> Trabajamos activamente bajo un enfoque de mejora constante en nuestros procesos artesanales de producción y venta, con la meta de consolidarnos como uno de los mayores proveedores y líderes del mercado.</p>
+        </section>
+
+	<!-- SECCIÓN DE CATÁLOGO DE PRODUCTOS -->
+        <section class="container" id="productos">
+            <h2>Nuestro Catálogo Tradicional</h2>
+            <p>Lleva a tu mesa el auténtico sabor de Tetela de Ocampo. Elaborado artesanalmente con ingredientes frescos y la receta secreta de la casa.</p>
+            
+            <div class="grid-productos">
+                <!-- Producto 1 -->
+                <div class="producto-card">
+                    <img src="Mole poblano.webp" alt="Mole Poblano en Pasta" class="producto-foto">
+                    <h3>Mole Poblano en Pasta (1 kg)</h3>
+                    <p>Nuestra receta familiar lista para diluir en caldo de pollo. Rinde para 8-10 porciones.</p>
+                    <div class="precio">$200.00</div>
+                    <button class="btn-comprar">Ordenar por WhatsApp</button>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="producto-card">
+                    <img src="Mole almendrado.webp" alt="Mole Almendrado Especial" class="producto-foto">
+                    <h3>Mole Almendrado Especial (500g)</h3>
+                    <p>Una variante selecta con un toque extra de almendras tostadas y especias finas, ideal para ocasiones especiales.</p>
+                    <div class="precio">$150.00</div>
+                    <button class="btn-comprar">Ordenar por WhatsApp</button>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="producto-card">
+                    <img src="Mole cazuela.webp" alt="Paquete Sabor de Tetela" class=producto-foto">
+                    <h3>Paquete "Sabor de Tetela"</h3>
+                    <p>Incluye 1/2 kg de mole tradicional y una cazuela de barro artesanal pequeña.</p>
+                    <div class="precio">$350.00</div>
+                    <button class="btn-comprar">Ordenar por WhatsApp</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="sucursales">
+            <h2>Nuestras Sucursales</h2>
+            <div class="grid-ubicaciones">
+                <div class="card">
+                    <h3>Sucursal Centro</h3>
+                    <p>Calle Eli Bonilla, Tamuanco, Tetela de Ocampo</p>
+                </div>
+                <div class="card">
+                    <h3>Sucursal Cuapancingo</h3>
+                    <p>Carretera Tetela-Chignahuapan, Cuapancingo, Tetela de Ocampo</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mole Doña Gloria. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
